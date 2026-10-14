@@ -1,0 +1,123 @@
+.sign-up {
+  width: 80%;
+  padding: 30px 20px;
+  border-radius: 10px;
+  box-shadow: 0px 10px 60px #e2ecf980;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+  background-color: #fff;
+  .user-type-selector {
+    display: flex;
+    gap: 20px;
+    padding: 8px 0px;
+    border-radius: 6px;
+    width: fit-content;
+
+    label {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+
+      input[type="radio"] {
+        accent-color: #6200ee; // for modern browsers
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+      }
+
+      span {
+        font-weight: 500;
+        color: #000;
+      }
+    }
+  }
+  .input {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 95%;
+    position: relative;
+    label {
+      font-weight: 600;
+    }
+    input {
+      width: 100%;
+      border: 1px solid #dedede;
+      outline: noen;
+      padding: 15px 10px;
+      border-radius: 5px;
+    }
+  }
+  .drop-input {
+    .ico {
+      position: absolute;
+      top: 60%;
+      right: 0%;
+      color: #888888;
+      font-size: 20px;
+    }
+    .drop-list {
+      position: absolute;
+      top: 110%;
+      padding: 10px 0px;
+      width: 100%;
+      background-color: #fff;
+      z-index: 2;
+      height: 200px;
+      overflow: auto;
+      p {
+        padding: 6px;
+        cursor: pointer;
+        &:hover {
+          background-color: #6565e2;
+          color: #fff;
+        }
+      }
+    }
+  }
+  .category-set {
+    display: flex;
+    align-items: start;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 10px 0px;
+    .cats {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 2px 6px;
+      border: 2px solid #6565e2;
+      background-color: #6565e23b;
+      border-radius: 6px;
+      .ico-cross {
+        font-size: 10px;
+        cursor: pointer;
+      }
+    }
+  }
+  button {
+    width: 100%;
+    padding: 17px 0px;
+    outline: none;
+    border: none;
+    background: #6565e2;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .shape {
+    height: 200px;
+    position: absolute;
+    top: -6%;
+    right: -10%;
+    z-index: -1;
+  }
+}

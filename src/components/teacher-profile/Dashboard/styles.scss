@@ -1,0 +1,185 @@
+.dashboard-teacher {
+  .d-head {
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+  .track-records {
+    display: flex;
+    align-items: start;
+    flex-wrap: wrap;
+    gap: 30px;
+    .record {
+      //   min-height: 200px;
+      width: 30%;
+      border-radius: 16px;
+      background-color: #2b2b9b;
+      @media (max-width: 1024px) {
+        width: 60%;
+      }
+      @media (max-width: 768px) {
+        width: 100%;
+      }
+      .counts {
+        padding-top: 20px;
+        padding-right: 40px;
+        text-align: end;
+        font-size: 50px;
+        color: #fff;
+      }
+      .bar-chart {
+        padding: 0px 20px;
+        font-size: 60px;
+        opacity: 10%;
+      }
+      .tests {
+        padding: 0px 20px;
+        padding-bottom: 20px;
+        color: #fff;
+        font-size: 14px;
+      }
+      &:nth-child(2) {
+        background-color: #36013f;
+      }
+      &:nth-child(3) {
+        background-color: #6565e3;
+      }
+      &:nth-child(4) {
+        background-color: #ff9500;
+      }
+      &:nth-child(5) {
+        background-color: #34c759;
+      }
+      &:nth-child(6) {
+        background-color: #00c7be;
+      }
+    }
+  }
+  .subscriptions {
+    margin-top: 50px;
+    display: flex;
+    align-items: start;
+    flex-wrap: wrap;
+    gap: 30px;
+
+    .subscrip {
+      display: flex;
+      align-items: start;
+      flex-direction: column;
+      gap: 10px;
+      width: 28%;
+      padding: 30px 10px;
+      background-color: #000b6b;
+      border-radius: 16px;
+      @media (max-width: 1024px) {
+        width: 60%;
+      }
+      @media (max-width: 768px) {
+        width: 100%;
+      }
+      .h {
+        border-bottom: 1px solid #ffffff75;
+        padding-bottom: 20px;
+        width: 100%;
+        span {
+          padding: 8px 12px;
+          background-color: #fff;
+          border-radius: 10px;
+          font-size: 15px;
+          font-weight: 600;
+        }
+      }
+      .money {
+        margin: 30px 0px;
+        font-size: 30px;
+        padding-bottom: 30px;
+        width: 100%;
+        border-bottom: 1px solid #ffffff88;
+        color: #fff;
+      }
+      .butt {
+        width: 100%;
+        button {
+          width: 100%;
+          padding: 10px 0px;
+          border-radius: 5px;
+          outline: none;
+          border: none;
+        }
+      }
+    }
+  }
+}
+
+.sessions {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  .lists {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .session {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      border: 1px solid #cccccc;
+      padding: 20px;
+      border-radius: 10px;
+      overflow: auto;
+    }
+    .student-info {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      @media (max-width: 1024px) {
+        flex-direction: column;
+        align-items: start;
+      }
+      img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #6565e2;
+      }
+    }
+    .time {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      @media (max-width: 768px) {
+        min-width: 150px;
+      }
+      p {
+        @media (max-width: 768px) {
+          font-size: 12px;
+        }
+      }
+      .action-butts {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        .rej {
+          background-color: red;
+        }
+      }
+      .rejctd {
+        background-color: red;
+      }
+      .complt {
+        background-color: rgb(21, 161, 21);
+      }
+      button {
+        outline: none;
+        border: none;
+        background-color: #6565e2;
+        color: #fff;
+        padding: 6px 8px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    }
+  }
+}

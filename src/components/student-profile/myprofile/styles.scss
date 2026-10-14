@@ -1,0 +1,130 @@
+.my-profile {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  .img {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    img {
+      height: 100%;
+      width: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .edt {
+      position: absolute;
+      bottom: 6%;
+      right: 8%;
+      height: 30px;
+      width: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #6565e2;
+      color: #fff;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+  }
+  .form-full {
+    .form {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+
+      @media (max-width: 768px) {
+        flex-direction: column;
+      }
+      .input-div,
+      .input-div2 {
+        width: 46%;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+
+        @media (max-width: 768px) {
+          width: 100%;
+        }
+        label {
+          font-size: 14px;
+          color: #888888;
+          span {
+            color: red;
+          }
+        }
+        input {
+          padding: 13px 4px;
+          border-radius: 5px;
+          border: 1px solid #bebec3;
+          outline: none;
+          &:not(:placeholder-shown) {
+            background-color: #f0f0f0;
+          }
+        }
+        .drop {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          position: relative;
+          .ico {
+            cursor: pointer;
+            position: absolute;
+            top: 60%;
+            right: 3%;
+          }
+          .drop-down {
+            position: absolute;
+            top: 100%;
+            width: 100%;
+            background-color: #f0f0f0;
+            z-index: 2;
+            height: 300px;
+            overflow: auto;
+            p {
+              cursor: pointer;
+              padding: 6px 8px;
+              margin-top: 4px;
+              &:hover {
+                background-color: #6565e2;
+                color: #fff;
+              }
+            }
+          }
+        }
+      }
+    }
+    .course-tags {
+      display: flex;
+      align-items: start;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+      p {
+        display: flex;
+        font-size: 14px;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 20px;
+        background: #6565e259;
+        border-radius: 10px;
+        border: 1px solid #6565e2;
+        .cut {
+          cursor: pointer;
+        }
+      }
+    }
+    .updt-btn {
+      margin-top: 30px;
+      padding: 10px 20px;
+      min-width: 120px;
+      outline: none;
+      border: none;
+      background-color: #6565e2;
+      border-radius: 5px;
+      font-size: 15px;
+      color: #fff;
+      cursor: pointer;
+    }
+  }
+}

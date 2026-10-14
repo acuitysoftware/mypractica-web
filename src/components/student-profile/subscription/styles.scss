@@ -1,0 +1,58 @@
+.subscriptions {
+  margin-top: 50px;
+  display: flex;
+  align-items: start;
+  flex-wrap: wrap;
+  gap: 30px;
+
+  .subscrip {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    gap: 10px;
+    width: 28%;
+    padding: 30px 10px;
+    background-color: #000b6b;
+    border-radius: 16px;
+    @media (max-width: 1200px) {
+      width: 65%;
+    }
+    @media (max-width: 1024px) {
+      width: 75%;
+    }
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+    .h {
+      border-bottom: 1px solid #ffffff75;
+      padding-bottom: 20px;
+      padding: 8px 0px;
+      display: inline;
+      background-color: #fff;
+      border-radius: 10px;
+      span {
+        font-size: 15px;
+        padding: 0px 10px;
+        font-weight: 600;
+      }
+    }
+    .money {
+      margin: 30px 0px;
+      font-size: 30px;
+      padding-bottom: 30px;
+      width: 100%;
+      border-bottom: 1px solid #ffffff88;
+      color: #fff;
+    }
+    .butt {
+      width: 100%;
+      button {
+        width: 100%;
+        padding: 10px 0px;
+        border-radius: 5px;
+        outline: none;
+        border: none;
+      }
+    }
+  }
+}

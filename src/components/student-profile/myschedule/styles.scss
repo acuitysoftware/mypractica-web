@@ -1,0 +1,91 @@
+.my-schedule {
+  .hd {
+    font-weight: 600;
+  }
+  .table-sch {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+    margin-top: 40px;
+    .pay-the-sc-teacher {
+      border: 1px solid #ebebeb;
+      border-radius: 10px;
+      padding: 24px 0px;
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      gap: 20px;
+      overflow: auto;
+      .teacher-info {
+        display: flex;
+        padding-left: 20px;
+        gap: 20px;
+        width: fit-content;
+        img {
+          height: 50px;
+          width: 50px;
+          border-radius: 50%;
+          object-fit: cover;
+          background-color: #6565e2;
+          object-fit: cover;
+        }
+        .techer-info-contents {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          .hd {
+            font-size: 16px;
+            font-weight: 600;
+          }
+          .qualify {
+            font-size: 12px;
+          }
+          .subs {
+            font-size: 14px;
+            color: #888888;
+          }
+        }
+      }
+      .time {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: fit-content;
+        p {
+          min-width: 120px;
+        }
+      }
+      .amount {
+        padding-right: 20px;
+        button {
+          padding: 6px 22px;
+          outline: none;
+          border: none;
+          border-radius: 6px;
+          color: #fff;
+          font-size: 16px;
+          cursor: pointer;
+        }
+        .pay-now {
+          padding: 6px 22px;
+          outline: none;
+          border: none;
+          border-radius: 6px;
+          background-color: #6565e2;
+          color: #fff;
+          font-size: 16px;
+          cursor: pointer;
+        }
+        .complete {
+          background-color: rgb(15, 173, 15);
+        }
+        .reject {
+          background-color: rgb(224, 41, 41);
+        }
+        .pending {
+          background-color: rgb(224, 41, 41);
+        }
+      }
+    }
+  }
+}

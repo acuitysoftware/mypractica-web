@@ -1,0 +1,192 @@
+.sc-teacher {
+  min-height: 80vh;
+  .head-av-teacher {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .schedule-box {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 30px;
+    border: 1px solid #ebebeb;
+    border-radius: 10px;
+    padding: 24px 0px;
+    .contents-sc {
+      width: 100%;
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      @media (max-width: 768px) {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+      }
+      .left {
+        width: 45%;
+      }
+      .left,
+      .right {
+        padding: 0px 22px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        .teacher-info {
+          display: flex;
+          gap: 20px;
+          @media (max-width: 768px) {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+          }
+          img {
+            height: 160px;
+            width: 220px;
+            border-radius: 10px;
+            background-color: #6565e2;
+          }
+          .techer-info-contents {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            .hd {
+              font-size: 16px;
+              font-weight: 600;
+            }
+            .qualify {
+              font-size: 12px;
+            }
+            .subs {
+              font-size: 14px;
+              color: #888888;
+            }
+          }
+        }
+        .schedule-tags {
+          display: flex;
+          gap: 20px;
+          flex-wrap: wrap;
+          .tag,
+          .tag-select {
+            outline: none;
+            border: 1px solid #e2e2e2;
+            padding: 7px 8px;
+            border-radius: 8px;
+            background-color: #f6f6f6;
+            cursor: pointer;
+            &:disabled {
+              background-color: #cecece;
+              color: #a1a1a1;
+            }
+          }
+          .tag-select {
+            color: #fff;
+            background-color: #34c759;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    .input-topic {
+      padding: 0px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      width: 90%;
+      textarea {
+        width: 98%;
+        padding: 20px 6px;
+        border: 1px solid #ebebeb;
+        border-radius: 10px;
+        resize: none;
+        outline: none;
+        @media (max-width: 768px) {
+          width: 80%;
+        }
+      }
+    }
+    .sch {
+      margin-left: 22px;
+      padding: 7px 12px;
+      outline: none;
+      border: none;
+      border-radius: 6px;
+      background-color: #6565e2;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  }
+
+  .pay-the-sc-teacher {
+    margin-top: 40px;
+    border: 1px solid #ebebeb;
+    border-radius: 10px;
+    padding: 24px 0px;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    gap: 12px;
+    gap: 20px;
+    overflow: auto;
+    .teacher-info {
+      display: flex;
+      padding-left: 20px;
+      gap: 20px;
+      img {
+        height: 160px;
+        width: 220px;
+        border-radius: 10px;
+        background-color: #6565e2;
+        object-fit: cover;
+      }
+      .techer-info-contents {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        .hd {
+          font-size: 16px;
+          font-weight: 600;
+        }
+        .qualify {
+          font-size: 12px;
+        }
+        .subs {
+          font-size: 14px;
+          color: #888888;
+        }
+      }
+    }
+    .time {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+
+      @media (max-width: 768px) {
+        min-width: 150px;
+      }
+      p {
+        @media (max-width: 768px) {
+          font-size: 14px;
+        }
+      }
+    }
+    .amount {
+      padding-right: 20px;
+      .pay-now {
+        padding: 7px 12px;
+        outline: none;
+        border: none;
+        border-radius: 6px;
+        background-color: #6565e2;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+      }
+    }
+  }
+}

@@ -1,0 +1,221 @@
+.my-sessions {
+  .filters {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    @media (max-width: 1024px) {
+      flex-direction: column;
+      gap: 20px;
+    }
+    .status,
+    .dates {
+      width: 25%;
+      padding: 0px 8px;
+      height: 40px;
+      border: 1px solid #cccccc;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      @media (max-width: 1024px) {
+        width: 100%;
+      }
+
+      .stat {
+        position: absolute;
+        top: 108%;
+        background-color: #fff;
+        border: 1px solid #cccccc;
+        padding: 10px 0px;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        left: 0;
+        cursor: pointer;
+        span {
+          padding: 4px 6px;
+          &:hover {
+            background-color: #6565e2;
+            color: #ffff;
+          }
+        }
+      }
+      .down {
+        cursor: pointer;
+      }
+      input,
+      .datepicker {
+        border: none;
+        outline: none;
+      }
+    }
+    .search-button {
+      height: 40px;
+      padding: 0px 12px;
+      outline: none;
+      border: none;
+      color: #fff;
+      background-color: #6565e2;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  }
+  .request-sessions {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    min-height: 50vh;
+    max-height: 80vh;
+    overflow: auto;
+    .lists {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      .session {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        border: 1px solid #cccccc;
+        padding: 20px;
+        border-radius: 10px;
+        overflow: auto;
+      }
+      .student-info {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        @media (max-width: 1024px) {
+          flex-direction: column;
+          align-items: start;
+        }
+        img {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          background-color: #6565e2;
+        }
+      }
+      .time {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        @media (max-width: 768px) {
+          min-width: 150px;
+        }
+        p {
+          @media (max-width: 768px) {
+            font-size: 12px;
+          }
+        }
+        .action-butts {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          .rej {
+            background-color: red;
+          }
+        }
+        .rejctd {
+          background-color: red;
+        }
+        .complt {
+          background-color: rgb(21, 161, 21);
+        }
+        button {
+          outline: none;
+          border: none;
+          background-color: #6565e2;
+          color: #fff;
+          padding: 6px 8px;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .pg-butts {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    button {
+      outline: none;
+      border: none;
+      padding: 10px 20px;
+      background-color: #6565e2;
+      color: #fff;
+      border-radius: 5px;
+      cursor: pointer;
+      &:disabled {
+        background-color: #b9b7b7;
+        cursor: not-allowed;
+      }
+    }
+  }
+}
+
+.confirmstudent {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  background-color: #00000073;
+  top: 0%;
+  left: 0%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  .confirm-student-box {
+    width: 30%;
+    background-color: #fff;
+    border-radius: 10px;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px 0px;
+    @media (max-width: 768px) {
+      width: 90%;
+    }
+    img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background-color: #6565e2;
+    }
+    p {
+      font-weight: 700;
+    }
+    input {
+      outline: none;
+      border: 1px solid #cccccc;
+      padding: 12px 6px;
+      width: 80%;
+      border-radius: 4px;
+    }
+    .buts {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      button {
+        outline: none;
+        border: none;
+        background-color: #6565e2;
+        padding: 7px 10px;
+        color: #fff;
+        border-radius: 6px;
+        cursor: pointer;
+        &:nth-child(2) {
+          background-color: red;
+        }
+      }
+    }
+  }
+}

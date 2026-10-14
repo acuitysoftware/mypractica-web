@@ -1,0 +1,42 @@
+.change-password {
+  h2 {
+    margin-bottom: 40px;
+  }
+  .full-form {
+    width: 100%;
+    .form {
+      display: flex;
+      gap: 30px;
+      width: 100%;
+      flex-wrap: wrap;
+      .form-input {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 45%;
+        @media (max-width: 768px) {
+          width: 100%;
+        }
+        label {
+          font-weight: 600;
+        }
+        input {
+          padding: 15px 6px;
+          border: 1px solid #707070;
+          outline: none;
+          border-radius: 5px;
+        }
+      }
+    }
+    .but {
+      margin-top: 30px;
+      padding: 10px 20px;
+      outline: none;
+      border: none;
+      background-color: #6565e2;
+      border-radius: 5px;
+      color: #fff;
+      cursor: pointer;
+    }
+  }
+}

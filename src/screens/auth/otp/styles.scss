@@ -1,0 +1,112 @@
+.otp-page {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .otp-container {
+    width: 400px;
+    margin: auto;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    position: relative;
+    @media (max-width: 768px) {
+      width: 94%;
+      text-align: center;
+    }
+    .shapes {
+      position: absolute;
+      height: 200px;
+      z-index: -1;
+      bottom: -19%;
+      left: -12%;
+      @media (max-width: 768px) {
+        display: none;
+      }
+    }
+    .shapes2 {
+      position: absolute;
+      height: 200px;
+      z-index: -1;
+      top: -12%;
+      right: -20%;
+      @media (max-width: 768px) {
+        display: none;
+      }
+    }
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+      @media (max-width: 768px) {
+        text-align: center;
+      }
+    }
+
+    p {
+      margin: 0.5rem 0;
+      color: #333;
+    }
+
+    .otp-inputs {
+      display: flex;
+      gap: 10px;
+      margin: 1rem 0;
+
+      @media (max-width: 768px) {
+        justify-content: center;
+      }
+      .otp-box {
+        width: 45px;
+        height: 50px;
+        font-size: 1.5rem;
+        text-align: center;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        outline: none;
+        transition: border-color 0.2s;
+        @media (max-width: 768px) {
+          width: 25px;
+          height: 30px;
+        }
+        &:focus {
+          border-color: #6c63ff;
+          box-shadow: 0 0 5px rgba(108, 99, 255, 0.5);
+        }
+      }
+    }
+
+    .resend-text {
+      font-size: 0.9rem;
+
+      .resend-link {
+        color: #6c63ff;
+        text-decoration: none;
+        cursor: pointer;
+        margin-left: 5px;
+      }
+    }
+
+    .verify-btn {
+      margin-top: 1rem;
+      padding: 12px 0px;
+      background-color: #6565e2;
+      width: 100%;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-weight: 500;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        background-color: #554df1;
+      }
+    }
+  }
+}

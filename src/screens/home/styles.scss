@@ -1,0 +1,172 @@
+.home {
+  .hero-section {
+    min-height: 600px;
+    padding: 20px 90px;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    position: relative;
+    gap: 20px;
+    @media (max-width: 768px) {
+      padding: 20px;
+      align-items: center;
+    }
+    .heading {
+      // color: #fff;
+      h1 {
+        font-size: 40px;
+      }
+
+      width: 50%;
+      @media (max-width: 1370px) {
+        width: 65%;
+      }
+      @media (max-width: 1124px) {
+        font-size: 35px;
+        width: 100%;
+      }
+      @media (max-width: 768px) {
+        width: 100%;
+        text-align: center;
+      }
+      @media (max-width: 500px) {
+        font-size: 30px;
+      }
+      .insider {
+        font-size: 50px;
+        color: #7373ed;
+      }
+    }
+    .find-exam-butt {
+      width: 160px;
+      padding: 12px 0px;
+      outline: none;
+      border: none;
+      background-color: #7373ed;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      text-decoration: none;
+      .ico {
+        font-size: 18px;
+      }
+    }
+    .teachers-section {
+      position: absolute;
+      bottom: 0;
+      left: 90px;
+      padding: 20px;
+      background-color: #7373ed;
+      min-width: 200px;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      @media (max-width: 768px) {
+        display: none;
+      }
+      .teachers {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        .images {
+          img,
+          .plus {
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+            background-color: rgb(255, 45, 115);
+            border: 2px solid #fff;
+            margin-left: -10px;
+            &:nth-child(1) {
+              margin-left: 0;
+            }
+          }
+        }
+        .teacher-count {
+          display: flex;
+          flex-direction: column;
+          span {
+            color: #0000b5;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+  .popular-exams {
+    padding: 50px 90px;
+    @media (max-width: 768px) {
+      padding: 50px 20px;
+    }
+    h2 {
+      margin-top: 20px;
+      margin-bottom: 50px;
+      text-align: center;
+      font-size: 32px;
+    }
+    .exam-row {
+      display: flex;
+      align-items: start;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .explore-exam-butt {
+      margin-top: 60px;
+      margin-bottom: 20px;
+      text-align: center;
+      display: flex;
+      align-items: start;
+      justify-content: center;
+      .exlp-butt {
+        outline: none;
+        border: none;
+        text-decoration: none;
+        padding: 16px 40px;
+        background-color: #7373ed;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        cursor: pointer;
+        .ico {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+  .app-adver {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-direction: column;
+    h1 {
+      font-size: 64px;
+      color: #4848d9;
+      text-align: center;
+      @media (max-width: 768px) {
+        font-size: 30px;
+      }
+    }
+    .butts {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      img {
+        height: 80px;
+        object-fit: contain;
+        @media (max-width: 768px) {
+          height: 30px;
+        }
+      }
+    }
+  }
+}
