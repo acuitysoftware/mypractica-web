@@ -1,20 +1,20 @@
-import React, { useEffect, useState } from 'react';
-import './styles.scss';
-import { Link, useNavigate } from 'react-router-dom';
-import { BiSolidPhoneCall } from 'react-icons/bi';
-import { IoMdMail } from 'react-icons/io';
-import { FaUser } from 'react-icons/fa6';
-import logo from '../../assets/logo-practica.png';
-import fb from '../../assets/fb.png';
-import insta from '../../assets/insta.png';
-import yt from '../../assets/yt.png';
-import { HiOutlineMenu } from 'react-icons/hi';
-import Menu from './Menu';
-import { useAuth } from '../../context/authContext';
-import { fetchSiteSettings, fetchSocialLinks } from '../../api/cms';
-import { IoMdLogOut } from 'react-icons/io';
-import Swal from 'sweetalert2';
-import { useLocation } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import "./styles.scss";
+import { Link, useNavigate } from "react-router-dom";
+import { BiSolidPhoneCall } from "react-icons/bi";
+import { IoMdMail } from "react-icons/io";
+import { FaUser } from "react-icons/fa6";
+import logo from "../../assets/logo-practica.png";
+import fb from "../../assets/fb.png";
+import insta from "../../assets/insta.png";
+import yt from "../../assets/yt.png";
+import { HiOutlineMenu } from "react-icons/hi";
+import Menu from "./Menu";
+import { useAuth } from "../../context/authContext";
+import { fetchSiteSettings, fetchSocialLinks } from "../../api/cms";
+import { IoMdLogOut } from "react-icons/io";
+import Swal from "sweetalert2";
+import { useLocation } from "react-router-dom";
 
 const Header = () => {
   const [ham, setHam] = useState(false);
@@ -26,11 +26,11 @@ const Header = () => {
   const logoutUser = async () => {
     await logout();
     await Swal.fire({
-      title: 'Logged Out Successfully',
-      icon: 'success',
+      title: "Logged Out Successfully",
+      icon: "success",
       timer: 1500,
     });
-    navigateTo('/sign-in');
+    navigateTo("/sign-in");
   };
   const siteSettings = async () => {
     try {
@@ -61,19 +61,19 @@ const Header = () => {
       <div className="header">
         <div className="upper-header">
           <div className="left-side">
-            <div className="elms">
+            {/* <div className="elms">
               <BiSolidPhoneCall className="ico" />
               <a
-                style={{ textDecoration: 'none', color: 'white', fontSize: 13 }}
+                style={{ textDecoration: "none", color: "white", fontSize: 13 }}
                 href={`tel: ${setting?.phone}`}
               >
                 {setting?.phone}
               </a>
-            </div>
+            </div> */}
             <div className="elms">
               <IoMdMail className="ico" />
               <a
-                style={{ textDecoration: 'none', color: 'white', fontSize: 13 }}
+                style={{ textDecoration: "none", color: "white", fontSize: 13 }}
                 href={`mailto: ${setting?.email}`}
               >
                 {setting?.email}
@@ -88,8 +88,8 @@ const Header = () => {
                     className={`fab ${e.icon}`}
                     style={{
                       color: e.color,
-                      background: '#fff',
-                      borderRadius: '50%',
+                      background: "#fff",
+                      borderRadius: "50%",
                       fontSize: 20,
                     }}
                   ></i>
@@ -98,7 +98,7 @@ const Header = () => {
             </div>
             {user ? (
               <div className="log-butt">
-                <Link to={'/profile'} className="loginbutton">
+                <Link to={"/profile"} className="loginbutton">
                   <FaUser className="ico" />
                   {user?.data?.name}
                 </Link>
@@ -113,13 +113,13 @@ const Header = () => {
                 <button
                   className="loginbutton"
                   onClick={() => {
-                    if (location.pathname === '/sign-in') {
+                    if (location.pathname === "/sign-in") {
                       window.scrollTo({
                         top: 700,
-                        behavior: 'smooth',
+                        behavior: "smooth",
                       });
                     } else {
-                      navigateTo('/sign-in');
+                      navigateTo("/sign-in");
                     }
                   }}
                 >
@@ -131,22 +131,22 @@ const Header = () => {
           </div>
         </div>
         <div className="lower-header">
-          <Link to={'/'} className="logo-link">
+          <Link to={"/"} className="logo-link">
             <img src={setting?.logo_path} alt="" />
           </Link>
           <div className="links">
             {user ? (
-              <Link to={'/profile'} className="link">
+              <Link to={"/profile"} className="link">
                 My Dashboard
               </Link>
             ) : null}
-            <Link to={'/'} className="link">
+            <Link to={"/"} className="link">
               Home
             </Link>
-            <Link to={'/exam'} className="link">
+            <Link to={"/exam"} className="link">
               Exam
             </Link>
-            <Link to={'/contact-us'} className="link">
+            <Link to={"/contact-us"} className="link">
               Contact Us
             </Link>
           </div>

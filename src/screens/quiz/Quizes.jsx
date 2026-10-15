@@ -278,25 +278,12 @@ const Quizes = () => {
                   </div>
 
                   <div>
-                    <button
+                    {/* <button
                       disabled={timeup ? true : false}
                       onClick={submitQuizQuestions}
                     >
                       Submit Quiz
-                    </button>
-                    {timeup ? (
-                      <p
-                        onClick={() => window.location.reload()}
-                        style={{
-                          fontSize: 12,
-                          color: "red",
-                          cursor: "pointer",
-                        }}
-                      >
-                        {" "}
-                        Apply Again ??
-                      </p>
-                    ) : null}
+                    </button> */}
                   </div>
                 </div>
                 {qquestions ? (
@@ -372,6 +359,45 @@ const Quizes = () => {
                       >
                         Next
                       </button>
+                    </div>
+                    <div
+                      style={{
+                        width: "100%",
+                        display: "flex",
+                        justifyContent: "flex-end",
+                        alignItems: "end",
+                        flexDirection: "column",
+                        gap: 5,
+                      }}
+                    >
+                      <button
+                        disabled={timeup ? true : false}
+                        onClick={submitQuizQuestions}
+                        style={{
+                          width: 120,
+                          outline: "none",
+                          border: "none",
+                          padding: "12px 0px",
+                          background: "#53c46b",
+                          color: "#fff",
+                          borderRadius: "5px",
+                        }}
+                      >
+                        Submit Quiz
+                      </button>
+                      {!timeup ? (
+                        <p
+                          onClick={() => window.location.reload()}
+                          style={{
+                            fontSize: 12,
+                            color: "red",
+                            cursor: "pointer",
+                          }}
+                        >
+                          {" "}
+                          Apply Again ??
+                        </p>
+                      ) : null}
                     </div>
                   </div>
                 ) : (

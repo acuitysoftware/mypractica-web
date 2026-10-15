@@ -3,6 +3,7 @@ import "./styles.scss";
 import shape from "../../assets/shape2.png";
 import { fetchcourselist } from "../../api/exams";
 import { GoChevronDown } from "react-icons/go";
+import { FiEye, FiEyeOff } from "react-icons/fi";
 import { fetchStateList, fetchSubjectList } from "../../api/cms";
 import { RxCross1 } from "react-icons/rx";
 import { StudentRegister, TeacherRegister } from "../../api/auth";
@@ -10,6 +11,29 @@ import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 import { ThreeCircles } from "react-loader-spinner";
+
+// Inline styles so the eye toggle works without touching styles.scss
+const passwordWrapStyle = { position: "relative", width: "100%" };
+const passwordInputStyle = {
+  width: "100%",
+  paddingRight: 42,
+  boxSizing: "border-box",
+};
+const eyeButtonStyle = {
+  position: "absolute",
+  right: 12,
+  top: "50%",
+  transform: "translateY(-50%)",
+  background: "transparent",
+  border: "none",
+  padding: 0,
+  width: "auto",
+  height: "auto",
+  cursor: "pointer",
+  display: "flex",
+  alignItems: "center",
+  color: "#666",
+};
 
 const Signup = ({ logintype, setLoginType }) => {
   const [states, setStates] = useState(null);
@@ -28,6 +52,8 @@ const Signup = ({ logintype, setLoginType }) => {
   const [subject_name, setSubjectName] = useState([]);
   const [error, setError] = useState("");
   const [qfication, setQfication] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const navigateTo = useNavigate();
   const [form, setForm] = useState({
     name: "",
@@ -59,7 +85,7 @@ const Signup = ({ logintype, setLoginType }) => {
     } catch (error) {}
   };
   const handleChange = (e) => {
-    const { name, value, type } = e.target;
+    const { name, value } = e.target;
     setForm((prev) => ({
       ...prev,
       [name]: value,
@@ -73,9 +99,16 @@ const Signup = ({ logintype, setLoginType }) => {
         ...prev,
         education: e.target.value,
       }));
-    } else {
-      null;
     }
+  };
+
+  const handleUserTypeChange = (e) => {
+    const type = e.target.value.toUpperCase();
+    setLoginType(type);
+    setForm((prev) => ({
+      ...prev,
+      user_type: type,
+    }));
   };
 
   const submit_form = async () => {
@@ -167,13 +200,7 @@ const Signup = ({ logintype, setLoginType }) => {
             name="userTypesignup"
             value="student"
             defaultChecked
-            onChange={(e) => {
-              setLoginType(e.target.value.toUpperCase());
-              setFormlogin((prev) => ({
-                ...prev,
-                user_type: e.target.value.toUpperCase(),
-              }));
-            }}
+            onChange={handleUserTypeChange}
           />
           <span>Student</span>
         </label>
@@ -182,13 +209,7 @@ const Signup = ({ logintype, setLoginType }) => {
             type="radio"
             name="userTypesignup"
             value="teacher"
-            onChange={(e) => {
-              setLoginType(e.target.value.toUpperCase());
-              setFormlogin((prev) => ({
-                ...prev,
-                user_type: e.target.value.toUpperCase(),
-              }));
-            }}
+            onChange={handleUserTypeChange}
           />
           <span>Teacher</span>
         </label>
@@ -226,36 +247,68 @@ const Signup = ({ logintype, setLoginType }) => {
           onChange={handleChange}
         />
       </div>
-      <div className="input">
+
+      {/* PASSWORD with show/hide */}
+      <div className="input input-pass">
         <label>
           Password <span style={{ color: "red" }}>*</span>
         </label>
-        <input
-          type="password"
-          placeholder="Password"
-          name="password"
-          onChange={handleChange}
-        />
+        <div style={passwordWrapStyle}>
+          <input
+            type={showPassword ? "text" : "password"}
+            placeholder="Password"
+            name="password"
+            style={passwordInputStyle}
+            onChange={handleChange}
+          />
+          <button
+            type="button"
+            style={eyeButtonStyle}
+            onClick={() => setShowPassword((prev) => !prev)}
+            aria-label={showPassword ? "Hide password" : "Show password"}
+          >
+            {showPassword ? <FiEyeOff size={18} /> : <FiEye size={18} />}
+          </button>
+        </div>
       </div>
-      <div className="input">
+
+      {/* CONFIRM PASSWORD with show/hide */}
+      <div className="input input-pass">
         <label>
           Confirm Password <span style={{ color: "red" }}>*</span>
         </label>
-        <input
-          type="password"
-          placeholder="Confirm Password"
-          name="password_confirmation"
-          onChange={handleChange}
-        />
+        <div style={passwordWrapStyle}>
+          <input
+            type={showConfirmPassword ? "text" : "password"}
+            placeholder="Confirm Password"
+            name="password_confirmation"
+            style={passwordInputStyle}
+            onChange={handleChange}
+          />
+          <button
+            type="button"
+            style={eyeButtonStyle}
+            onClick={() => setShowConfirmPassword((prev) => !prev)}
+            aria-label={
+              showConfirmPassword
+                ? "Hide confirm password"
+                : "Show confirm password"
+            }
+          >
+            {showConfirmPassword ? <FiEyeOff size={18} /> : <FiEye size={18} />}
+          </button>
+        </div>
       </div>
+
       {/* DROP DOWN */}
       <div className="input drop-input">
         <label>State*</label>
         <input
           type="text"
           placeholder="Select State"
-          autocomplete="false"
+          autoComplete="off"
           value={state_name}
+          readOnly
           onClick={() => setStateDrp(!statedrp)}
         />
         <GoChevronDown className="ico" onClick={() => setStateDrp(!statedrp)} />
@@ -278,6 +331,7 @@ const Signup = ({ logintype, setLoginType }) => {
               )
               .map((state) => (
                 <p
+                  key={state?.id}
                   onClick={() => {
                     setStateDrp(false);
                     setStateSearch("");
@@ -332,6 +386,7 @@ const Signup = ({ logintype, setLoginType }) => {
             <div className="drop-list">
               {subject?.map((sub) => (
                 <p
+                  key={sub?.id}
                   onClick={() => {
                     setSubjectDrp(false);
                     const newSubId = sub?.id;
@@ -346,7 +401,7 @@ const Signup = ({ logintype, setLoginType }) => {
                     });
                     setForm((prev) => ({
                       ...prev,
-                      subject_id: [...subject_id, newSubId], // manually append to old categoryId
+                      subject_id: [...subject_id, newSubId], // manually append to old subject ids
                     }));
                   }}
                 >
@@ -375,6 +430,7 @@ const Signup = ({ logintype, setLoginType }) => {
             <div className="drop-list">
               {courses?.map((course) => (
                 <p
+                  key={course?.id}
                   onClick={() => {
                     setCourseDrp(false);
                     const newCategoryId = course?.id;
@@ -400,7 +456,7 @@ const Signup = ({ logintype, setLoginType }) => {
           ) : null}
         </div>
       ) : null}
-      {/* For the corses tag listing */}
+      {/* For the courses tag listing */}
       {category_name.length === 0 || !category_name ? null : (
         <div className="category-set">
           {category_name?.map((c, index) => (
@@ -437,7 +493,7 @@ const Signup = ({ logintype, setLoginType }) => {
                   setSubjectId(subid);
                   setForm((prev) => ({
                     ...prev,
-                    subject_id: subid, // manually append to old categoryId
+                    subject_id: subid,
                   }));
                 }}
               />

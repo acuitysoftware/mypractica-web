@@ -5,9 +5,11 @@ import { FaAngleRight } from "react-icons/fa";
 import { GoMail } from "react-icons/go";
 import logo from "../../assets/logo-practica.png";
 import fb from "../../assets/fb.png";
+import playstore from "../../assets/play-store.png";
+import applestore from "../../assets/apple-store.png";
 import insta from "../../assets/insta.png";
 import yt from "../../assets/yt.png";
-import { fetchSiteSettings, fetchSocialLinks } from "../../api/cms";
+import { fetchSiteSettings, fetchSocialLinks, fetchCMS } from "../../api/cms";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import { getPopularExamList } from "../../api/exams";
 
@@ -31,6 +33,18 @@ const Footer = () => {
   };
   useEffect(() => {
     siteSettings();
+  }, []);
+
+  const [applinks, setApplinks] = useState();
+  const getAppCms = async () => {
+    try {
+      const res = await fetchCMS("app-section");
+      setApplinks(res?.data);
+      console.log(res);
+    } catch (error) {}
+  };
+  useEffect(() => {
+    getAppCms();
   }, []);
 
   const [socials, setSocials] = useState(null);
@@ -58,6 +72,25 @@ const Footer = () => {
               <i className={`fab ${e.icon}`} style={{ color: e.color }}></i>
             </a>
           ))}
+        </div>
+        <div
+          className="butts"
+          style={{ display: "flex", alignItems: "center", gap: 20 }}
+        >
+          <a href={socials?.description_2}>
+            <img
+              src={playstore}
+              alt=""
+              style={{ height: 60, width: 120, objectFit: "contain" }}
+            />
+          </a>
+          <a href={applinks?.description_3}>
+            <img
+              src={applestore}
+              alt=""
+              style={{ height: 60, width: 120, objectFit: "contain" }}
+            />
+          </a>
         </div>
       </div>
       <div className="sec">
