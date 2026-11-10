@@ -385,7 +385,7 @@ const Quizes = () => {
                       >
                         Submit Quiz
                       </button>
-                      {!timeup ? (
+                      {timeup ? (
                         <p
                           onClick={() => window.location.reload()}
                           style={{

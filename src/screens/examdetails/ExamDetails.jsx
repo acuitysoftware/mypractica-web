@@ -230,14 +230,14 @@ const ExamDetails = () => {
                   {exm_details?.subscription?.offer_text}
                 </p>
                 <div className="pricing">
-                  <p className="price-total">₹3999</p>
+                  {/* <p className="price-total">₹3999</p> */}
                   <p className="price-offer">₹{exam_p?.price}</p>
                 </div>
-                {3999 - exam_p?.price < 0 ? null : (
+                {/* {3999 - exam_p?.price < 0 ? null : (
                   <div className="totalsave">
                     <p> 🎁 Your Total Savings ₹{3999 - exam_p?.price}</p>
                   </div>
-                )}
+                )} */}
 
                 <button
                   onClick={() => {
